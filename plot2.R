@@ -11,3 +11,8 @@ axis(1)
 pts <- pretty(baltimore_total_by_year$x/1000)
 axis(2, at=pts, labels=pts)
 box()
+
+# TODO
+# verify numbers
+# columns instead of points
+# png output

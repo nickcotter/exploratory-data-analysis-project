@@ -8,3 +8,8 @@ baltimore <- subset(NEI, fips=="24510")
 baltimore_total_by_year <- aggregate(baltimore$Emissions, by=list(year=baltimore$year), sum)
 
 ggplot(baltimore, aes(year, Emissions)) + geom_col() + facet_grid(~ type)
+
+# TODO
+# verify numbers
+# labels and year numbers
+# png output
