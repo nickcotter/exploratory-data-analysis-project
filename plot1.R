@@ -2,8 +2,8 @@ NEI <- readRDS("summarySCC_PM25.rds")
 
 total_by_year <- aggregate(NEI$Emissions, by=list(year=NEI$year), sum)
 
-plot(total_by_year$year, total_by_year$x, xlab = "Year", ylab = "Total Emissions (Tons)", pch=16)
-abline(lm(total_by_year$x~total_by_year$year))
+barplot(total_by_year$x/1000, names.arg=total_by_year$year, xlab="Year", ylab="Total Emissions (Kilotons)")
 
 # TODO
+# plot title
 # png output
