@@ -11,5 +11,6 @@ total_vehicle_by_year <- aggregate(baltimore_vehicle$Emissions, by=list(year=bal
 barplot(total_vehicle_by_year$x, names.arg=total_vehicle_by_year$year, xlab="Year", ylab="Total Emissions (Tons)")
 
 # TODO
+# show changes in vehicle type instead of simple total
 # plot title
 # png output
