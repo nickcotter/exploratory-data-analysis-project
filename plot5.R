@@ -6,11 +6,12 @@ vehicle_scc <- SCC[grep("vehicle", SCC$EI.Sector, ignore.case=TRUE),]
 baltimore <- subset(NEI, fips == "24510")
 baltimore_vehicle <- merge(baltimore, vehicle_scc, by="SCC")
 
-total_vehicle_by_year <- aggregate(baltimore_vehicle$Emissions, by=list(year=baltimore_vehicle$year), sum)
+baltimore_vehicle$vehicletype <- baltimore_vehicle$EI.Sector
+levels(baltimore_vehicle$vehicletype) <- gsub("Mobile - On-Road ", "", levels(baltimore_vehicle$vehicletype))
 
-barplot(total_vehicle_by_year$x, names.arg=total_vehicle_by_year$year, xlab="Year", ylab="Total Emissions (Tons)")
+ggplot(baltimore_vehicle, aes(factor(year), Emissions)) + geom_col() + facet_wrap( ~ vehicletype, scales = 'free') + labs(x="Year", y = "Emissions (tons)")
+
 
 # TODO
-# show changes in vehicle type instead of simple total
 # plot title
 # png output
