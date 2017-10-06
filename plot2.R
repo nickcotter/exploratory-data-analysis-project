@@ -1,5 +1,4 @@
 NEI <- readRDS("summarySCC_PM25.rds")
-#SCC <- readRDS("Source_Classification_Code.rds")
 
 baltimore <- subset(NEI, fips=="24510")
 
