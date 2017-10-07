@@ -13,7 +13,7 @@ total_losangeles_vehicle_by_year <- aggregate(losangeles_vehicle$Emissions, by=l
 
 total_by_year <- data.frame(year=c(total_baltimore_vehicle_by_year$year, total_losangeles_vehicle_by_year$year), 
                             total=c(total_baltimore_vehicle_by_year$x, total_losangeles_vehicle_by_year$x),
-                            city=as.factor(c(rep("Baltimore", 4), rep("Los Angeles", 4))))
+                            city=as.factor(c(rep("Baltimore", 4), rep("Los Angeles County", 4))))
 
 png(filename = "plot6.png")
 p <- ggplot(total_by_year, aes(factor(year), total)) +

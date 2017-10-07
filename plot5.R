@@ -17,7 +17,3 @@ p <- ggplot(baltimore_vehicle, aes(factor(year), Emissions)) + geom_col() +
         theme(plot.title = element_text(size=10, hjust = 0.5, face="bold"))
 print(p)
 dev.off()
-
-
-# TODO
-# png output
