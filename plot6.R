@@ -15,8 +15,14 @@ total_by_year <- data.frame(year=c(total_baltimore_vehicle_by_year$year, total_l
                             total=c(total_baltimore_vehicle_by_year$x, total_losangeles_vehicle_by_year$x),
                             city=as.factor(c(rep("Baltimore", 4), rep("Los Angeles", 4))))
 
-ggplot(total_by_year, aes(factor(year), total)) + geom_col() + facet_wrap( ~ city, scales = 'free') + labs(x="Year", y = "Emissions (tons)")
+ggplot(total_by_year, aes(factor(year), total)) +
+        geom_col() +
+        facet_wrap( ~ city, scales = 'free') +
+        labs(x="Year", y = "Emissions (tons)") +
+        ggtitle("Total PM2.5 emissions by motor vehicle source", 
+                subtitle="Baltimore City, MD vs Los Angeles County") +
+        theme(plot.title = element_text(size=10, hjust = 0.5, face="bold"),
+              plot.subtitle = element_text(size=10, hjust = 0.5, face="bold"))
 
 # TODO
-# plot title
 # png output

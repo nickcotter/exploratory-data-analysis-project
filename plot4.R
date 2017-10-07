@@ -8,7 +8,9 @@ nei_coal_comb <- merge(NEI, coal_comb_scc, by="SCC")
 
 total_cc_by_year <- aggregate(nei_coal_comb$Emissions, by=list(year=nei_coal_comb$year), sum)
 
-barplot(total_cc_by_year$x/1000, names.arg=total_cc_by_year$year, xlab="Year", ylab="Total Emissions (Kilotons)")
+barplot(total_cc_by_year$x/1000, names.arg=total_cc_by_year$year, xlab="Year", 
+        ylab="Total Emissions (Kilotons)")
+title("Total PM2.5 Coal Combustion Emissions : United States", cex.main=1)
 
 # TODO
 # plot title
